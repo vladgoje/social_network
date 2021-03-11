@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="408.0" prefWidth="796.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="socialnetwork.controller.UserController">
+      <GridPane layoutX="67.0" layoutY="43.0" prefHeight="408.0" prefWidth="796.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="190.0" minWidth="190.0" prefWidth="190.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="200.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="190.0" minWidth="190.0" prefWidth="190.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" />
+          <RowConstraints fx:id="userMenuBar" minHeight="35.0" valignment="TOP" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+         <HBox alignment="CENTER" minHeight="60.0" prefHeight="60.0" prefWidth="200.0" styleClass="borderBottom">
+            <children>
+               <ImageView fx:id="mainProfileImg" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin>
+               </ImageView>
+               <Label fx:id="connectedUserLabel">
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin>
+               </Label>
+            </children>
+         </HBox>
+         <VBox alignment="CENTER" maxHeight="60.0" minHeight="60.0" prefHeight="60.0" styleClass="borderBottom" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <children>
+                  <Label text="Looking for new people?" textAlignment="CENTER" />
+                  <TextField fx:id="searchTextField" minHeight="30.0" minWidth="30.0" prefHeight="2.0" prefWidth="401.0" />
+            </children>
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+         </VBox>
+         <HBox alignment="CENTER" maxHeight="60.0" minHeight="60.0" prefHeight="60.0" styleClass="borderBottom" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <children>
+               <Label fx:id="notificationsLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleShowNotifications" prefHeight="50.0" prefWidth="50.0" styleClass="notificationLabelIcon" textAlignment="CENTER">
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin></Label>
+               <Label fx:id="friendRequestLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleShowRequests" prefHeight="50.0" prefWidth="50.0" styleClass="friendRequestsIcon" textAlignment="CENTER">
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin></Label>
+               <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleLogout" prefHeight="50.0" prefWidth="50.0" styleClass="logoutIcon">
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin>
+               </Label>
+            </children>
+         </HBox>
+            <VBox alignment="TOP_CENTER" prefHeight="272.0" prefWidth="190.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Messages" />
+                  <ListView fx:id="conversationListView" prefHeight="238.0" prefWidth="164.0" styleClass="message-list" VBox.vgrow="ALWAYS" />
+               </children>
+            <padding>
+               <Insets top="20.0" />
+            </padding>
+            </VBox>
+         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <children>
+                  <VBox fx:id="searchResults" alignment="TOP_CENTER" styleClass="search-results">
+                     <children>
+                        <ListView fx:id="usersListView" minHeight="-Infinity" minWidth="-Infinity" prefHeight="211.0" prefWidth="363.0" styleClass="search-user-list" />
+                     </children>
+                  <padding>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </padding>
+                  </VBox>
+               <VBox fx:id="mainVBox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                  <children>
+                     <HBox alignment="CENTER_LEFT" maxHeight="50.0">
+                        <children>
+                           <Label onMouseClicked="#handleNewEvent" styleClass="newEventLabel" text="New event...">
+                              <HBox.margin>
+                                 <Insets bottom="5.0" left="25.0" top="5.0" />
+                              </HBox.margin>
+                           </Label>
+                        </children></HBox>
+                     <VBox fx:id="newEventBox">
+                        <children>
+                           <TextField fx:id="eventTitle" promptText="Title..." VBox.vgrow="ALWAYS">
+                              <VBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </VBox.margin>
+                           </TextField>
+                           <TextArea fx:id="eventDescription" prefHeight="200.0" prefWidth="200.0" promptText="Description..." VBox.vgrow="ALWAYS">
+                              <VBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </VBox.margin>
+                           </TextArea>
+                           <DatePicker fx:id="eventDate" promptText="Date...">
+                              <VBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </VBox.margin>
+                           </DatePicker>
+                           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                              <children>
+                                 <Button mnemonicParsing="false" onAction="#createEvent" text="Create event">
+                                    <HBox.margin>
+                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </HBox.margin></Button>
+                                 <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                 <Button mnemonicParsing="false" onAction="#cancelEvent" text="Cancel">
+                                    <HBox.margin>
+                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </HBox.margin></Button>
+                              </children>
+                           </HBox>
+                        </children>
+                        <VBox.margin>
+                           <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                        </VBox.margin>
+                     </VBox>
+                     <Pagination fx:id="eventsPagination" maxPageIndicatorCount="0" pageCount="1" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Label text="My friends" />
+                  <ListView fx:id="friendsListView" prefHeight="251.0" prefWidth="187.0" VBox.vgrow="ALWAYS">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin></ListView>
+               </children>
+            <GridPane.margin>
+               <Insets top="20.0" />
+            </GridPane.margin>
+            </VBox>
+            <Button fx:id="newMessageButton" mnemonicParsing="false" onAction="#handleNewMessage" text="New Message" GridPane.rowIndex="2" />
+         <Button mnemonicParsing="false" onAction="#handleShowActivity" text="Activity history" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+</AnchorPane>

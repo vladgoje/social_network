@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="socialnetwork.controller.NotificationsController">
+    <children>
+        <GridPane fx:id="requestToListView" prefHeight="454.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="441.6666717628638" minHeight="10.0" prefHeight="401.66667048136395" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+            <Pagination fx:id="notificationsPagination" maxPageIndicatorCount="5" pageCount="1" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                <Label text="Notifications" />
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#closeNotifications" text="Cancel" />
+               </children></HBox>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

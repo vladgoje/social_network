@@ -1,0 +1,130 @@
+
+AnchorPane{
+    -fx-min-height: 100%;
+    -fx-background-color: linear-gradient(#414345, #232526);
+    -fx-font-family: "Trebuchet MS", Helvetica, sans-serif;
+    -fx-font-size: 16px;
+}
+
+Button {
+    -fx-padding: 5px;
+    -fx-start-margin: 10px;
+    -fx-background-color: #00e6b8;
+    -fx-font-size: 1em;
+}
+
+Button:hover{
+    -fx-background-color: #1affd1;
+    -fx-cursor: hand;
+}
+
+Label{
+    -fx-text-fill: #e1e2e2;
+}
+
+.notificationLabelIcon{
+    -fx-text-fill: #232526;
+    -fx-background-image: url("/img/notifications.png");
+    -fx-background-position: center;
+    -fx-background-size: stretch;
+    -fx-cursor: hand;
+}
+
+.friendRequestsIcon{
+    -fx-text-fill: #232526;
+    -fx-background-image: url("/img/friend_requests.png");
+    -fx-background-position: center;
+    -fx-background-size: stretch;
+    -fx-cursor: hand;
+}
+
+.logoutIcon{
+    -fx-text-fill: #232526;
+    -fx-background-image: url("/img/logout.png");
+    -fx-background-position: center;
+    -fx-background-size: stretch;
+    -fx-cursor: hand;
+}
+
+.borderBottom{
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: #00e6b8;
+}
+
+/*-------LOGIN PANEL--------*/
+.login-label,
+.register-label{
+    -fx-font-size: 2em;
+    -fx-font-weight: bold;
+}
+
+.login-notification,
+.register-notification{
+    -fx-text-fill: red;
+}
+
+/*-------REGISTER PANEL--------*/
+.register-panel{
+    -fx-font-size: 2em;
+    -fx-font-weight: bold;
+}
+
+.register-notification{
+    -fx-text-fill: red;
+}
+
+/*-------PROFILE PANEL--------*/
+
+.topIcons {
+    -fx-cursor: hand;
+}
+
+.list-view{
+    -fx-background-color: linear-gradient(#232526, #414345);
+}
+
+.list-cell{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.search-user-list .list-cell:hover, .message-list .list-cell:hover{
+    -fx-background-color: #777;
+}
+
+.listToSelect .list-cell:filled:selected:focused, .listToSelect .list-cell:filled:selected{
+    -fx-background-color: #777;
+}
+
+.imageView{
+    -fx-start-margin: 5px;
+    -fx-end-margin: 5px;
+}
+
+
+.feedListView{
+    -fx-background-insets: 0px 20px 0 20px;
+    -fx-border-insets: 5px 20px 0 20px;
+}
+
+.feedListView .list-cell{
+    -fx-background-insets: 25px 25px 0 25px;
+    -fx-border-insets: 0 25px 0 25px;
+    -fx-padding: 30px;
+    -fx-text-fill: black;
+}
+
+.list-view .scroll-bar:vertical .increment-arrow,
+.list-view .scroll-bar:vertical .decrement-arrow,
+.list-view .scroll-bar:vertical .increment-button,
+.list-view .scroll-bar:vertical .decrement-button {
+    -fx-padding: 0px;
+}
+
+
+.newEventLabel {
+    -fx-font-size: 13px;
+    -fx-text-fill: #00e6b8;
+    -fx-font-style: italic;
+    -fx-cursor: hand;
+}
